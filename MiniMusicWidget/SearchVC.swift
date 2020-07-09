@@ -22,7 +22,7 @@ class SearchVC: NSViewController {
     }
     
     @objc func showResults() {
-        let hostingController = NSHostingController(rootView: SearchResultsView(results: AlamoRequest.songList!))
+        let hostingController = NSHostingController(rootView: SearchResultsView(results: AlamoRequest.songList))
         ShowPopover.showPopover(popView: hostingController, mainView: searchButton, behaviour: .transient, side: .maxY)
     }
     

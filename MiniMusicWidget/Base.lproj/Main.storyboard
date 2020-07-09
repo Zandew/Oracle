@@ -683,7 +683,7 @@
         <!--MainVC-->
         <scene sceneID="Sra-3x-JNl">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="7YD-tb-kQr" customClass="MainVC" customModule="MusicWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="7YD-tb-kQr" customClass="MainVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JB6-PR-TeX">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -702,7 +702,7 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n98-mZ-NRx">
                                 <rect key="frame" x="343" y="202" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="end" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2A-Xr-Wg3">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2A-Xr-Wg3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -724,7 +724,7 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOD-Y0-IU6">
                                 <rect key="frame" x="60" y="202" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="start" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="bsK-YV-6p8">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="bsK-YV-6p8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -743,6 +743,15 @@
                                     <action selector="playlistPressed:" target="7YD-tb-kQr" id="bk5-IJ-Cuy"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-ss-i5Q">
+                                <rect key="frame" x="102" y="103" width="245" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" bezelStyle="round" id="Kdd-Qu-wai">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -750,8 +759,8 @@
                         <outlet property="nextButton" destination="n98-mZ-NRx" id="UDB-fG-Jhm"/>
                         <outlet property="playPauseButton" destination="Esm-md-qdQ" id="P1U-IK-ZQv"/>
                         <outlet property="playlistButton" destination="sTH-dt-Zy3" id="ZFs-qW-B2M"/>
-                        <outlet property="previousButton" destination="JOD-Y0-IU6" id="Cep-WV-OaH"/>
-                        <outlet property="previousPressed" destination="JOD-Y0-IU6" id="aR3-lc-6Mv"/>
+                        <outlet property="previousButton" destination="JOD-Y0-IU6" id="1uG-bD-cHx"/>
+                        <outlet property="songName" destination="EaF-ss-i5Q" id="MvR-Bu-D7b"/>
                     </connections>
                 </viewController>
                 <customObject id="SFH-TG-SZu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -761,7 +770,7 @@
         <!--SearchVC-->
         <scene sceneID="kyV-aV-mhI">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="jwj-Jd-UCj" customClass="SearchVC" customModule="MusicWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="jwj-Jd-UCj" customClass="SearchVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="1jS-sa-ZzV">
                         <rect key="frame" x="0.0" y="0.0" width="303" height="41"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -799,10 +808,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NSGoBackTemplate" width="9" height="12"/>
+        <image name="NSGoForwardTemplate" width="9" height="12"/>
         <image name="NSIconViewTemplate" width="14" height="10"/>
         <image name="NSTouchBarPlayPauseTemplate" width="23" height="30"/>
         <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
-        <image name="end" width="128" height="128"/>
-        <image name="start" width="128" height="128"/>
     </resources>
 </document>

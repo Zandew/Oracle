@@ -18,4 +18,12 @@ extension NSAppleScript {
 
 extension NSAppleScript {
     
+    static func playSong(uri: String) -> String {
+        return """
+        tell application "Spotify"
+            play track \(uri)
+        end tell
+        """
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881775D24B7607B0097B8D5 /* UserSettings.swift */; };
 		2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E04C24B6683300331B4D /* AppDelegate.swift */; };
 		2886E05124B6683400331B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2886E05024B6683400331B4D /* Assets.xcassets */; };
 		2886E05424B6683400331B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2886E05224B6683400331B4D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2886E04924B6683300331B4D /* MiniMusicWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniMusicWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2886E04C24B6683300331B4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2886E05024B6683400331B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,13 +81,14 @@
 				2886E04C24B6683300331B4D /* AppDelegate.swift */,
 				2886E05C24B668A400331B4D /* MainVC.swift */,
 				2886E05E24B668C400331B4D /* SearchVC.swift */,
-				2886E06024B668E200331B4D /* Song.swift */,
-				2886E06224B6690400331B4D /* SongViews.swift */,
 				2886E06424B6692300331B4D /* SearchResultsView.swift */,
 				2886E06624B6693800331B4D /* PlaylistView.swift */,
+				2886E06224B6690400331B4D /* SongViews.swift */,
 				2886E06824B6694D00331B4D /* ShowPopover.swift */,
+				2886E06024B668E200331B4D /* Song.swift */,
 				2886E06A24B6696D00331B4D /* Alamofire.swift */,
 				2886E06C24B6697F00331B4D /* Scripts.swift */,
+				2881775D24B7607B0097B8D5 /* UserSettings.swift */,
 				2886E05024B6683400331B4D /* Assets.xcassets */,
 				2886E05224B6683400331B4D /* Main.storyboard */,
 				2886E05524B6683400331B4D /* Info.plist */,
@@ -235,6 +238,7 @@
 				2886E06B24B6696D00331B4D /* Alamofire.swift in Sources */,
 				2886E06324B6690400331B4D /* SongViews.swift in Sources */,
 				2886E05D24B668A400331B4D /* MainVC.swift in Sources */,
+				2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

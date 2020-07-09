@@ -7,6 +7,7 @@ struct SongSearchView: View {
     var body: some View {
         HStack {
             Image(nsImage: song.image!)
+                .resizable()
                 .frame(width: 100, height: 100)
             Text(song.name)
             Spacer()
@@ -25,6 +26,9 @@ struct SongPlaylistView: View {
     
     var body: some View{
         Image(nsImage: song.image!)
+            .resizable()
+            .frame(width: 75, height: 75)
+            .cornerRadius(10)
     }
 }
 

@@ -5,10 +5,10 @@ class AlamoRequest {
     
     static let headers: HTTPHeaders = [
         "Accept": "application/json",
-        "Authorization": "Bearer BQCWqCGzUvzy3X-0vmnU4R-YuqCSPVfSQzx6iF8b4VgY06a8y4RFbYzmp8VF0WtVbN34CN0YB3rw6IJtUA_pRmqa0M3gnHzBPZtWDJV2SELHyN_vKxlzSSI8M3a4uv7ZSbX7XBU9TA"
+        "Authorization": "Bearer BQDdKLTpEt9PGQevIpt4nXSLnzSJX3pf9mRYbY_e7Dv2lGaubZhswb7JvmgjiwSFBQ3Zj0MiNFFsN6MCCH1K8QpZSinrrUbidCfQvvRb3ryKS5Pnbdlz5LIeKbTCc3MiBx8LX-oEvg"
     ]
     
-    static var songList: [Song]?
+    static var songList: [Song] = []
     
     typealias JSONStandard = [String : AnyObject]
     
@@ -27,6 +27,7 @@ class AlamoRequest {
                 if let items = tracks["items"] as? [JSONStandard] {
                     for i in 0..<items.count {
                         let item = items[i]
+                        print(item)
                         let name = item["name"]
                         var artists: [String] = []
                         if let artistList = item["artists"] as? [JSONStandard] {
@@ -34,13 +35,14 @@ class AlamoRequest {
                                 artists.append(artistList[i]["name"] as! String)
                             }
                         }
+                        let uri = item["uri"]
                         if let album = item["album"] as? JSONStandard {
                             if let images = album["images"] as? [JSONStandard] {
                                 let imageData = images[0]
                                 let mainImageURL = URL(string: imageData["url"] as! String)
                                 let mainImageData = NSData(contentsOf: mainImageURL!)
                                 let mainImage = NSImage(data: mainImageData! as Data)
-                                self.songList?.append(Song(Name: name as! String, Artists: artists, Image: mainImage))
+                                self.songList.append(Song(Name: name as! String, Artists: artists, Image: mainImage, URI: uri as! String))
                             }
                         }
                     }

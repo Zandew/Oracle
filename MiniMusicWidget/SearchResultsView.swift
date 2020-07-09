@@ -15,7 +15,7 @@ struct SearchResultsView: View {
                             }
                 )*/
                 Button(action: {
-                    
+                    UserData.playlist.append(result)
                 }) {
                     SongSearchView(song: result)
                 }.buttonStyle(PlainButtonStyle())
