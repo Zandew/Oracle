@@ -8,10 +8,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func toggleWindow(_: Any?){
         ShowPopover.showPopover(popView: mainView!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
-        /*let popoverView = NSPopover()
-        popoverView.contentViewController = mainView
-        popoverView.behavior = .transient
-        popoverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)*/
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
