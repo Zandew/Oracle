@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainView = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainVC") as? NSViewController
         
         guard let statusButton = statusBarItem.button else { return }
-        statusButton.title = "HELLO"
+        statusButton.title = "MiniMusicWidget"
         statusButton.action = #selector(toggleWindow(_:))
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURL(event:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         

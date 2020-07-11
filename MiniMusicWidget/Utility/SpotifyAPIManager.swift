@@ -99,10 +99,10 @@ class SpotifyAPIManager{
                         "Authorization": "Bearer \(String(describing: self.accessToken!))"
                     ]
                     
-                    print("ACCESS TOKEN \(String(describing: self.accessToken))")
+                    /*print("ACCESS TOKEN \(String(describing: self.accessToken))")
                     print("REFRESH TOKEN \(String(describing: self.refreshToken))")
                     print("EXPIRES \(String(describing: self.expires))")
-                    print("SCOPE: \(String(describing: self.scopes))")
+                    print("SCOPE: \(String(describing: self.scopes))")*/
                     
                     completion(result)
                 }
