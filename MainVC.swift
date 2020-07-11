@@ -1,11 +1,12 @@
 import Cocoa
 import SwiftUI
 import Alamofire
+import WebKit
+import OAuthSwift
 
 class MainVC: NSViewController {
     
     var searchView: NSViewController?
-
     
     @IBOutlet weak var previousButton: NSButton!
     @IBOutlet weak var playPauseButton: NSButton!
@@ -61,6 +62,5 @@ class MainVC: NSViewController {
             songName.stringValue = "No Song Currently Playing"
         }
     }
-    
-}
 
+}

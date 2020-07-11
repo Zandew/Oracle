@@ -3,9 +3,9 @@ import Alamofire
 
 class AlamoRequest {
     
-    static let headers: HTTPHeaders = [
+    static var headers: HTTPHeaders = [
         "Accept": "application/json",
-        "Authorization": "Bearer BQDdKLTpEt9PGQevIpt4nXSLnzSJX3pf9mRYbY_e7Dv2lGaubZhswb7JvmgjiwSFBQ3Zj0MiNFFsN6MCCH1K8QpZSinrrUbidCfQvvRb3ryKS5Pnbdlz5LIeKbTCc3MiBx8LX-oEvg"
+        "Authorization": "oauth-token"
     ]
     
     static var songList: [Song] = []
@@ -13,6 +13,7 @@ class AlamoRequest {
     typealias JSONStandard = [String : AnyObject]
     
     static func get(url: String){
+        print(headers["Authorization"])
         AF.request(url, method: .get, headers: headers).responseJSON(completionHandler: {
             response in
             self.parseData(JSONData: response.data!)
