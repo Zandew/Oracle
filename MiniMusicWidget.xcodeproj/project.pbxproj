@@ -11,7 +11,6 @@
 		286F18A024B9E98200156709 /* SpotifyLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */; };
 		286F18A224B9E9DD00156709 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A124B9E9DD00156709 /* Extensions.swift */; };
 		286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A324B9ED7300156709 /* MainLoginVC.swift */; };
-		286F18A624B9EE7B00156709 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A524B9EE7B00156709 /* Settings.swift */; };
 		2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881775D24B7607B0097B8D5 /* UserSettings.swift */; };
 		2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */; };
 		2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E04C24B6683300331B4D /* AppDelegate.swift */; };
@@ -34,7 +33,6 @@
 		286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginProtocol.swift; sourceTree = "<group>"; };
 		286F18A124B9E9DD00156709 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginVC.swift; sourceTree = SOURCE_ROOT; };
-		286F18A524B9EE7B00156709 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginVC.swift; sourceTree = "<group>"; };
 		2886E04924B6683300331B4D /* MiniMusicWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniMusicWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 		286F18C824BA643F00156709 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				286F18A524B9EE7B00156709 /* Settings.swift */,
 				2881775D24B7607B0097B8D5 /* UserSettings.swift */,
 			);
 			path = Settings;
@@ -282,7 +279,6 @@
 				2886E06924B6694D00331B4D /* ShowPopover.swift in Sources */,
 				2886E06124B668E200331B4D /* Song.swift in Sources */,
 				2886E06724B6693800331B4D /* PlaylistView.swift in Sources */,
-				286F18A624B9EE7B00156709 /* Settings.swift in Sources */,
 				286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */,
 				2886E06524B6692300331B4D /* SearchResultsView.swift in Sources */,
 				286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */,

@@ -5,9 +5,8 @@ import WebKit
 
 class MainLoginVC: NSViewController {
 
-    let defaults = UserDefaults.init(suiteName: "com.fusionblender.spotify")
     var webView: WKWebView!
-    var spotifyManager:SpotifyAPIManager = SpotifyAPIManager.shared
+    var spotifyManager: SpotifyAPIManager = SpotifyAPIManager.shared
 
     @IBOutlet weak var profileImageView: NSImageView!
     
@@ -110,7 +109,7 @@ extension MainLoginVC: WKNavigationDelegate{
                         self.spotifyManager.authorizeWithRequestToken(code: code_found, completion:{ response in
                             
                             switch response{
-                                case .success(let (credential, _, _)):
+                                case .success(let (_, _, _)):
                                     print("Authorization Success")
                                     self.spotifyManager.getSpotifyAccountInfo(completed: { response in
                                         
@@ -172,43 +171,16 @@ extension MainLoginVC: WKNavigationDelegate{
     
     
     
-    func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
+    private func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
         print(error.localizedDescription)
     }
-    func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("Starting to load")
     }
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("Finishing loading")
     }
     
-}
-
-extension MainLoginVC: NSWindowDelegate{
-    
-    /*
-    func window(_ window: NSWindow, willPositionSheet sheet: NSWindow, using rect: NSRect) -> NSRect {
-       return NSRect.init(x:0, y: 0, width: 300, height: 600)
-    }
-    
-    func windowDidEnterFullScreen(_ notification: Notification) {
-        defaults?.set(true, forKey: Settings.Keys.appFullScreen)
-    }
-    
-    func windowDidExitFullScreen(_ notification: Notification) {
-        defaults?.set(false, forKey: Settings.Keys.appFullScreen)
-    }*/
-    
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
-        
-        let window = NSApplication.shared.mainWindow!
-        if(sender == window) {
-            defaults?.set(window.isZoomed ? true : false, forKey:Settings.Keys.appFullScreen)
-        }
-        return true;
-    }
- 
- 
 }
 
 extension MainLoginVC:SpotifyLoginProtocol{

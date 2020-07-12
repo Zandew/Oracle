@@ -6,7 +6,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusBarItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var mainView: NSViewController?
-    let defaults = UserDefaults.init(suiteName: "com.fusionblender.spotify")
 
     @objc func toggleWindow(_: Any?){
         ShowPopover.showPopover(popView: mainView!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
@@ -31,11 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-        let window = NSApplication.shared.mainWindow!
-        defaults?.set(NSStringFromRect(window.frame), forKey: Settings.Keys.windowPosition)
-        defaults?.synchronize()
     }
-
 
 }
 

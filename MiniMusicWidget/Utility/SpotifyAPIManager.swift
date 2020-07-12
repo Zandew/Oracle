@@ -35,17 +35,7 @@ class SpotifyAPIManager{
         
         
     }
-    
-    /**
-      Initial call used to send Spotify app credentials and scope request.
-     
-     The Spotify service will either respond with a URI that contains a code to exchange
-     for an access token or a login URI if the user is not logged in.
-     
-     - Parameters: None
-     
-     - Returns: Void
-     */
+
     func authorizeScope(){
 
         oauth2.authorize(
@@ -53,7 +43,7 @@ class SpotifyAPIManager{
             scope: "user-library-modify playlist-read-collaborative playlist-read-private playlist-modify-private playlist-modify-public user-read-currently-playing user-modify-playback-state user-read-playback-state user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read  user-read-private",
             state: "test12345") { result in
                 switch result {
-                case .success(let (credential, _, _)):
+                case .success(let (_, _, _)):
                     print("Authorization Success")
                 case .failure(let error):
                     print(error.description)
