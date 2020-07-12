@@ -6,9 +6,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusBarItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var mainView: NSViewController?
+    var loginWC: NSViewController?
 
     @objc func toggleWindow(_: Any?){
-        ShowPopover.showPopover(popView: mainView!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
+        if UserData.auth {
+            ShowPopover.showPopover(popView: mainView!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
+        } else {
+           ShowPopover.showPopover(popView: loginWC!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
+        }
     }
     
     @objc func handleGetURL(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
@@ -20,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         mainView = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainVC") as? NSViewController
+        loginWC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainLoginVC") as? NSViewController
         
         guard let statusButton = statusBarItem.button else { return }
         statusButton.title = "MiniMusicWidget"

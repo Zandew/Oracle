@@ -810,8 +810,8 @@
         <!--Window Controller-->
         <scene sceneID="Zat-Lo-JCM">
             <objects>
-                <windowController id="S5V-00-9W8" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gCd-8T-2KS">
+                <windowController storyboardIdentifier="LoginWC" id="S5V-00-9W8" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gCd-8T-2KS" customClass="LoginWC">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="245" y="301" width="480" height="270"/>
@@ -831,7 +831,7 @@
         <!--Main LoginVC-->
         <scene sceneID="kEk-eS-tRD">
             <objects>
-                <viewController id="aV2-qW-Ub7" customClass="MainLoginVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainLoginVC" id="aV2-qW-Ub7" customClass="MainLoginVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="w7h-lG-fBm">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

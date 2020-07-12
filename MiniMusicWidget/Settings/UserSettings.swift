@@ -11,6 +11,7 @@ import SwiftUI
 
 class UserData {
     
+    static var auth: Bool = false
     static var playlist: [Song] = []
     static var songIndex: Int = 0
 }

@@ -24,7 +24,7 @@ class MainLoginVC: NSViewController {
         webView.navigationDelegate = self
         
         
-        webView.cleanAllCookies()
+        //webView.cleanAllCookies()
         
     }
 

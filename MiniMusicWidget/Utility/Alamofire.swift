@@ -13,7 +13,6 @@ class AlamoRequest {
     typealias JSONStandard = [String : AnyObject]
     
     static func get(url: String){
-        print(headers["Authorization"])
         AF.request(url, method: .get, headers: headers).responseJSON(completionHandler: {
             response in
             self.parseData(JSONData: response.data!)

@@ -26,4 +26,36 @@ extension NSAppleScript {
         """
     }
     
+    static func togglePlay() -> String {
+        return """
+        tell application "Spotify"
+            playpause
+        end tell
+        """
+    }
+    
+    static func setTime(time: Double) -> String {
+        return """
+        tell application "Spotify"
+            set player position \(time) * (duration of current track)/1000
+        end tell
+        """
+    }
+    
+    static func getTime() -> String {
+        return """
+        tell application "Spotify"
+            return player position
+        end tell
+        """
+    }
+    
+    static func getState() -> String {
+        return """
+        tell application "Spotify"
+            return player state
+        end tell
+        """
+    }
+    
 }
