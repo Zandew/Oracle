@@ -32,7 +32,7 @@
 		286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPIManager.swift; sourceTree = "<group>"; };
 		286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginProtocol.swift; sourceTree = "<group>"; };
 		286F18A124B9E9DD00156709 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginVC.swift; sourceTree = SOURCE_ROOT; };
+		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainLoginVC.swift; path = "MiniMusicWidget/View Controllers/MainLoginVC.swift"; sourceTree = SOURCE_ROOT; };
 		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginVC.swift; sourceTree = "<group>"; };
 		2886E04924B6683300331B4D /* MiniMusicWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniMusicWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +41,7 @@
 		2886E05324B6683400331B4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2886E05524B6683400331B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2886E05624B6683400331B4D /* MiniMusicWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniMusicWidget.entitlements; sourceTree = "<group>"; };
-		2886E05C24B668A400331B4D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = SOURCE_ROOT; };
+		2886E05C24B668A400331B4D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = "MiniMusicWidget/View Controllers/MainVC.swift"; sourceTree = SOURCE_ROOT; };
 		2886E05E24B668C400331B4D /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		2886E06024B668E200331B4D /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		2886E06224B6690400331B4D /* SongViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViews.swift; sourceTree = "<group>"; };
@@ -67,18 +67,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		286F18C424BA62ED00156709 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				286F18A324B9ED7300156709 /* MainLoginVC.swift */,
-				2886E05C24B668A400331B4D /* MainVC.swift */,
-				2886E05E24B668C400331B4D /* SearchVC.swift */,
-				2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */,
-			);
-			name = "View Controllers";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		286F18C524BA632C00156709 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +99,17 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		286F18C924BB45EA00156709 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				286F18A324B9ED7300156709 /* MainLoginVC.swift */,
+				2886E05C24B668A400331B4D /* MainVC.swift */,
+				2886E05E24B668C400331B4D /* SearchVC.swift */,
+				2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		2886E04024B6683300331B4D = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +133,7 @@
 			children = (
 				2886E04C24B6683300331B4D /* AppDelegate.swift */,
 				2886E05224B6683400331B4D /* Main.storyboard */,
-				286F18C424BA62ED00156709 /* View Controllers */,
+				286F18C924BB45EA00156709 /* View Controllers */,
 				286F18C524BA632C00156709 /* Views */,
 				286F18C624BA63C400156709 /* Utility */,
 				286F18C824BA643F00156709 /* Settings */,
