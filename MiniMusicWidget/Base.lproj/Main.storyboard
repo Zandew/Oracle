@@ -686,11 +686,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainVC" id="7YD-tb-kQr" customClass="MainVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JB6-PR-TeX">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esm-md-qdQ">
-                                <rect key="frame" x="200" y="202" width="48" height="48"/>
+                                <rect key="frame" x="163" y="202" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarPlayPauseTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3T7-fG-lKW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -701,7 +701,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n98-mZ-NRx">
-                                <rect key="frame" x="343" y="202" width="48" height="48"/>
+                                <rect key="frame" x="299" y="202" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2A-Xr-Wg3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -712,7 +712,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-9g-zcE">
-                                <rect key="frame" x="343" y="35" width="48" height="48"/>
+                                <rect key="frame" x="299" y="20" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xvr-0L-S2X">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -723,7 +723,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOD-Y0-IU6">
-                                <rect key="frame" x="60" y="202" width="48" height="48"/>
+                                <rect key="frame" x="30" y="202" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="bsK-YV-6p8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -734,7 +734,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTH-dt-Zy3">
-                                <rect key="frame" x="60" y="35" width="48" height="48"/>
+                                <rect key="frame" x="30" y="20" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSIconViewTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="CNF-09-SJJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -745,7 +745,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-ss-i5Q">
-                                <rect key="frame" x="102" y="103" width="245" height="64"/>
+                                <rect key="frame" x="65" y="130" width="245" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" bezelStyle="round" id="Kdd-Qu-wai">
                                     <font key="font" metaFont="system"/>
@@ -753,10 +753,20 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGu-VP-LBC">
+                                <rect key="frame" x="74" y="83" width="227" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="46T-2Q-aAp">
+                                    <connections>
+                                        <action selector="sliderChanged:" target="7YD-tb-kQr" id="MHz-Cc-ZGW"/>
+                                    </connections>
+                                </sliderCell>
+                            </slider>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="addSongButton" destination="mHY-9g-zcE" id="9r9-ON-k2B"/>
+                        <outlet property="musicSlider" destination="46T-2Q-aAp" id="hnP-FH-lDt"/>
                         <outlet property="nextButton" destination="n98-mZ-NRx" id="UDB-fG-Jhm"/>
                         <outlet property="playPauseButton" destination="Esm-md-qdQ" id="P1U-IK-ZQv"/>
                         <outlet property="playlistButton" destination="sTH-dt-Zy3" id="ZFs-qW-B2M"/>
@@ -766,7 +776,7 @@
                 </viewController>
                 <customObject id="SFH-TG-SZu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="329"/>
+            <point key="canvasLocation" x="22" y="329"/>
         </scene>
         <!--SearchVC-->
         <scene sceneID="kyV-aV-mhI">

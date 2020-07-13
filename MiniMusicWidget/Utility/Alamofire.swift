@@ -36,13 +36,15 @@ class AlamoRequest {
                             }
                         }
                         let uri = item["uri"]
+                        var length: Double = item["duration_ms"] as! Double
+                        length /= 1000
                         if let album = item["album"] as? JSONStandard {
                             if let images = album["images"] as? [JSONStandard] {
                                 let imageData = images[0]
                                 let mainImageURL = URL(string: imageData["url"] as! String)
                                 let mainImageData = NSData(contentsOf: mainImageURL!)
                                 let mainImage = NSImage(data: mainImageData! as Data)
-                                self.songList.append(Song(Name: name as! String, Artists: artists, Image: mainImage, URI: uri as! String))
+                                self.songList.append(Song(Name: name as! String, Artists: artists, Image: mainImage, URI: uri as! String, Length: length))
                             }
                         }
                     }

@@ -13,5 +13,9 @@ class UserData {
     
     static var auth: Bool = false
     static var playlist: [Song] = []
-    static var songIndex: Int = 0
+    static var songIndex: Int = 0 {
+        didSet {
+            NextSongTimer.instance.initTimer(playlist[songIndex].length)
+        }
+    }
 }

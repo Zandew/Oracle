@@ -18,10 +18,18 @@ extension NSAppleScript {
 
 extension NSAppleScript {
     
+    static func perm() -> String {
+        return """
+        tell application "Spotify"
+            return volume
+        end tell
+        """
+    }
+    
     static func playSong(uri: String) -> String {
         return """
         tell application "Spotify"
-            play track \(uri)
+            play track "\(uri)"
         end tell
         """
     }
@@ -37,7 +45,8 @@ extension NSAppleScript {
     static func setTime(time: Double) -> String {
         return """
         tell application "Spotify"
-            set player position \(time) * (duration of current track)/1000
+            set newPos to (\(time) * (duration of current track)/1000)
+            set player position to newPos
         end tell
         """
     }
