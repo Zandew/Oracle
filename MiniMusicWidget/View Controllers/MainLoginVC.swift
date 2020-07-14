@@ -7,32 +7,17 @@ class MainLoginVC: NSViewController {
 
     var webView: WKWebView!
     var spotifyManager: SpotifyAPIManager = SpotifyAPIManager.shared
-
-    @IBOutlet weak var profileImageView: NSImageView!
     
-    @IBOutlet weak var profileNameTextField: NSTextField!
-    @IBOutlet weak var spotifyAccountTypeTextField: NSTextField!
-    @IBOutlet weak var spotifyPublicProfileTextField: NSTextField!
-    @IBOutlet weak var spotifyFollowersTextField: NSTextField!
-    
-    //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
         webView.navigationDelegate = self
-        
         webView.cleanAllCookies()
         
-    }
-
-    
-    override func viewDidAppear() {
         spotifyManager.oauth2.authorizeURLHandler = self
         spotifyManager.authorizeScope()
     }
-
    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let dest = segue.destinationController as? SpotifyLoginVC{
@@ -41,18 +26,6 @@ class MainLoginVC: NSViewController {
     }
     
 }
-
-
-//MARK:- WKUIDelegate
-extension MainLoginVC: WKUIDelegate{
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress" {
-            print(Float(webView.estimatedProgress))
-        }
-    }
-}
-
 
 extension MainLoginVC: OAuthSwiftURLHandlerType {
     
@@ -66,49 +39,8 @@ extension MainLoginVC: OAuthSwiftURLHandlerType {
 }
 
 extension MainLoginVC: WKNavigationDelegate{
-
-    public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        
-        var code:String? = nil
-        
-        if let t_url = webView.url{
-            
-            // If redirect is to Login then user isn't logged in according to initial OAuth2 request.
-            // Segue to SpotifyWebLoginViewController for login flow
-            if t_url.lastPathComponent == "login"{
-                self.performSegue(withIdentifier: "segueWebLogin", sender: self)
-                
-            }else{
-                
-                //Redirect after initial OAuth2 request for authorization.
-                //Contains code to pass back to Spotify for Access and Refresh tokens
-                if let queryItems = NSURLComponents(string: t_url.description)?.queryItems {
-                    
-                    for item in queryItems {
-                        if item.name == "code" {
-                            if let itemValue = item.value {
-                                code = itemValue
-                            }
-                        }
-                    }
-                    
-                    if let code_found = code{
-                        
-                        // Get Access and Refresh tokens from Spotify
-                        self.spotifyManager.authorizeWithRequestToken(code: code_found)
-                        
-                    }
-
-                }
-                
-            }
-        }
-        
-    }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void){
-        
-        print("MainScreenVC: Deciding Policy")
         
         if(navigationAction.navigationType == .other)
         {
