@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import OAuthSwift
 
 class SpotifyAPIManager{
@@ -52,7 +51,7 @@ class SpotifyAPIManager{
 
     }
     
-    func authorizeWithRequestToken(code:String, completion: @escaping (Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> ()) {
+    func authorizeWithRequestToken(code:String) {
         
         oauth2.postOAuthAccessTokenWithRequestToken(byCode: code, callbackURL: URL.init(string: "http://localhost:8080")!) { result in
             
@@ -60,7 +59,6 @@ class SpotifyAPIManager{
                 
             case .failure(let error):
                 print("postOAuthAccessTokenWithRequestToken Error: \(error)")
-                completion(result)
                 
             case .success(let response):
                 
@@ -68,8 +66,6 @@ class SpotifyAPIManager{
                 print(response)
                 
                 if let access_token = response.parameters["access_token"], let refresh_token = response.parameters["refresh_token"], let expires = response.parameters["expires_in"], let scope = response.parameters["scope"]{
-                    
-                    
                     
                     self.refreshToken = refresh_token as? String
                     self.accessToken = access_token as? String
@@ -90,55 +86,8 @@ class SpotifyAPIManager{
                     ]
                     
                     UserData.auth = true
-                    
-                    /*print("ACCESS TOKEN \(String(describing: self.accessToken))")
-                    print("REFRESH TOKEN \(String(describing: self.refreshToken))")
-                    print("EXPIRES \(String(describing: self.expires))")
-                    print("SCOPE: \(String(describing: self.scopes))")*/
-                    
-                    completion(result)
                 }
             }
-
         }
-        
-        
     }
-    
-    func getSpotifyAccountInfo(completed: @escaping (AFDataResponse<Any>)->()){
-        
-        let aboutURL = baseURL + "/v1/me"
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + self.accessToken,
-        ]
-        
-        
-        AF.request(aboutURL,
-                   headers: headers).responseJSON { response in
-                    completed(response)
-        }
-        
-    }
-    
-    func setAuthorizeHandler(vc:OAuthSwiftURLHandlerType){
-         oauth2.authorizeURLHandler = vc
-    }
-    
-    func setTokens(refresh:String, access:String){
-        self.refreshToken = refresh
-        self.accessToken = access
-    }
-    
-    func setScopes(scopes:[String]){
-        
-        self.scopes = scopes
-        
-    }
-    
-    func setExpires(expires:Int){
-        
-        self.expires = expires
-    }
-    
-   
 }

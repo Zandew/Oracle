@@ -23,24 +23,21 @@ class MainLoginVC: NSViewController {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        
-        //webView.cleanAllCookies()
+        webView.cleanAllCookies()
         
     }
 
     
     override func viewDidAppear() {
-        
-        spotifyManager.setAuthorizeHandler(vc: self)
+        spotifyManager.oauth2.authorizeURLHandler = self
         spotifyManager.authorizeScope()
     }
 
    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-       
-        if let swlvc = segue.destinationController as? SpotifyLoginVC{
-            swlvc.loginURL = webView.url
-            swlvc.loginDelegate = self
+        if let dest = segue.destinationController as? SpotifyLoginVC{
+            dest.loginURL = webView.url
+            dest.loginDelegate = self
         }
     }
     
@@ -106,30 +103,7 @@ extension MainLoginVC: WKNavigationDelegate{
                     if let code_found = code{
                         
                         // Get Access and Refresh tokens from Spotify
-                        self.spotifyManager.authorizeWithRequestToken(code: code_found, completion:{ response in
-                            
-                            switch response{
-                                case .success(let (_, _, _)):
-                                    print("Authorization Success")
-                                    self.spotifyManager.getSpotifyAccountInfo(completed: { response in
-                                        
-                                        switch response.result {
-                                        case .success:
-                                            
-                                            
-                                            let JSON = response.value as! NSDictionary
-                                            print(JSON)
-                                            
-                                        case let .failure(error):
-                                            print(error)
-                                        }
-                                        
-                                    })
-                                case .failure(let error):
-                                    print(error.description)
-                            }
-
-                        })
+                        self.spotifyManager.authorizeWithRequestToken(code: code_found)
                         
                     }
 
@@ -193,22 +167,7 @@ extension MainLoginVC:SpotifyLoginProtocol{
         print("Login Success: Code \(code)")
         
         // Complete the authorization, get the access and refresh tokens, call the spotify API
-        self.spotifyManager.authorizeWithRequestToken(code: code) { (String) in
-            self.spotifyManager.getSpotifyAccountInfo(completed: { response in
-                
-                switch response.result {
-                case .success:
-                    
-                    let JSON = response.value as! NSDictionary
-                    print(JSON)
-                    
-                case let .failure(error):
-                    print(error)
-                }
-                
-            })
-
-        }
+        self.spotifyManager.authorizeWithRequestToken(code: code)
     }
     
 }
