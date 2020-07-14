@@ -37,7 +37,6 @@ class MainLoginVC: NSViewController {
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let dest = segue.destinationController as? SpotifyLoginVC{
             dest.loginURL = webView.url
-            dest.loginDelegate = self
         }
     }
     
@@ -71,7 +70,6 @@ extension MainLoginVC: WKNavigationDelegate{
     public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         
         var code:String? = nil
-        var state:String? = nil
         
         if let t_url = webView.url{
             
@@ -91,13 +89,7 @@ extension MainLoginVC: WKNavigationDelegate{
                             if let itemValue = item.value {
                                 code = itemValue
                             }
-                        }else if item.name == "state"{
-                            if let itemValue = item.value{
-                                state = itemValue
-                            }
                         }
-                        
-                        
                     }
                     
                     if let code_found = code{
@@ -142,33 +134,5 @@ extension MainLoginVC: WKNavigationDelegate{
       
         decisionHandler(.cancel)
     }
-    
-    
-    
-    private func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-        print(error.localizedDescription)
-    }
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("Starting to load")
-    }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finishing loading")
-    }
-    
-}
-
-extension MainLoginVC:SpotifyLoginProtocol{
-    
-    func loginFailure(msg:String) {
-        print("Login Failure:" + msg)
-    }
-    
-    func loginSuccess(code:String, state:String) {
-        print("Login Success: Code \(code)")
-        
-        // Complete the authorization, get the access and refresh tokens, call the spotify API
-        self.spotifyManager.authorizeWithRequestToken(code: code)
-    }
-    
 }
 

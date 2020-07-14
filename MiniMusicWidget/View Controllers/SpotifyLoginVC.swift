@@ -14,7 +14,6 @@ class SpotifyLoginVC: NSViewController {
 
     @IBOutlet weak var webView: WKWebView!
     var loginURL:URL?
-    var loginDelegate:SpotifyLoginProtocol!
     var spotifyManager:SpotifyAPIManager = SpotifyAPIManager.shared
     
     override func viewDidLoad() {
@@ -27,15 +26,7 @@ class SpotifyLoginVC: NSViewController {
 
         super.viewDidAppear()
 
-        guard let t_login_url = self.loginURL else{
-            self.loginDelegate.loginFailure(msg:"Malformed URL")
-            dismiss(self)
-            return
-        }
-
-
-
-        let request = URLRequest(url: t_login_url)
+        let request = URLRequest(url: self.loginURL!)
         self.webView.load(request)
 
         // Fade-in WebView
@@ -65,11 +56,9 @@ extension SpotifyLoginVC: WKNavigationDelegate{
                 // If user is logged in already, and App authorized, the first redirect from Spotify
                 // returns the code required for the Access and Refresh tokens
                 if navigationAction.request.url?.host == "localhost"{
-                    let codeAndState = parseCodeAndStateFromURL(navigationAction: navigationAction)
+                    let code = parseCodeAndStateFromURL(navigationAction: navigationAction)
 
-                    if let code_found = codeAndState.0, let state_found = codeAndState.1{
-                        loginDelegate.loginSuccess(code:code_found, state:state_found)
-                    }
+                    self.spotifyManager.authorizeWithRequestToken(code: code!)
 
                     decisionHandler(.cancel)
                     self.dismiss(nil)
@@ -96,7 +85,6 @@ extension SpotifyLoginVC: WKNavigationDelegate{
             }else if navigationAction.request.url?.lastPathComponent == "cancel"{
 
                 decisionHandler(.allow)
-                self.loginDelegate.loginFailure(msg:"User cancelled login flow")
                 self.dismiss(nil)
                 return
 
@@ -105,12 +93,9 @@ extension SpotifyLoginVC: WKNavigationDelegate{
             // and get access and refresh tokens.
             }else if navigationAction.request.url?.host == "localhost"{
 
-                let codeAndState = parseCodeAndStateFromURL(navigationAction: navigationAction)
+                let code = parseCodeAndStateFromURL(navigationAction: navigationAction)
 
-                if let code_found = codeAndState.0, let state_found = codeAndState.1{
-                    loginDelegate.loginSuccess(code:code_found, state:state_found)
-                }
-
+                self.spotifyManager.authorizeWithRequestToken(code: code!)
 
                 decisionHandler(.cancel)
                 self.dismiss(nil)
@@ -123,10 +108,9 @@ extension SpotifyLoginVC: WKNavigationDelegate{
 
     }
     
-    private func parseCodeAndStateFromURL(navigationAction: WKNavigationAction) -> (String?, String?){
+    private func parseCodeAndStateFromURL(navigationAction: WKNavigationAction) -> String?{
 
         var code:String? = nil
-        var state:String? = nil
 
         if let queryItems = NSURLComponents(string: navigationAction.request.url!.description)?.queryItems {
             
@@ -135,17 +119,12 @@ extension SpotifyLoginVC: WKNavigationDelegate{
                     if let itemValue = item.value {
                         code = itemValue
                     }
-                }else if item.name == "state"{
-                    if let itemValue = item.value{
-                        state = itemValue
-                    }
                 }
-
             }
             
         }
         
-        return (code,state)
+        return code
 
     }
 }

@@ -27,7 +27,6 @@ class MainVC: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(initTimer), name: Notification.Name("initTimer"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(invalidateTimer), name: Notification.Name("invalidateTimer"), object: nil)
         
-        print("LOADED")
         NotificationCenter.default.post(name: Notification.Name("initTimer"), object: nil)
     }
     

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */; };
-		286F18A024B9E98200156709 /* SpotifyLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */; };
 		286F18A224B9E9DD00156709 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A124B9E9DD00156709 /* Extensions.swift */; };
 		286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A324B9ED7300156709 /* MainLoginVC.swift */; };
 		2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881775D24B7607B0097B8D5 /* UserSettings.swift */; };
@@ -31,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPIManager.swift; sourceTree = "<group>"; };
-		286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginProtocol.swift; sourceTree = "<group>"; };
 		286F18A124B9E9DD00156709 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainLoginVC.swift; path = "MiniMusicWidget/View Controllers/MainLoginVC.swift"; sourceTree = SOURCE_ROOT; };
 		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				2886E06824B6694D00331B4D /* ShowPopover.swift */,
 				2886E06024B668E200331B4D /* Song.swift */,
 				286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */,
-				286F189F24B9E98200156709 /* SpotifyLoginProtocol.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 				2886E06D24B6697F00331B4D /* Scripts.swift in Sources */,
 				2886E05F24B668C400331B4D /* SearchVC.swift in Sources */,
 				2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */,
-				286F18A024B9E98200156709 /* SpotifyLoginProtocol.swift in Sources */,
 				2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */,
 				2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */,
 				286F18A224B9E9DD00156709 /* Extensions.swift in Sources */,
