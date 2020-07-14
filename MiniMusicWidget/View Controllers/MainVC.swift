@@ -47,6 +47,9 @@ class MainVC: NSViewController {
     }
     
     @IBAction func sliderChanged(_ sender: Any) {
+        if UserData.playlist.count == 0 {
+            return
+        }
         NotificationCenter.default.post(name: Notification.Name("invalidateTimer"), object: nil)
         let time = musicSlider.doubleValue
         NSAppleScript.go(code: NSAppleScript.setTime(time: time), completionHandler: {_, _, _ in})

@@ -42,6 +42,14 @@ extension NSAppleScript {
         """
     }
     
+    static func pause() -> String {
+        return """
+        tell application "Spotify"
+            pause
+        end tell
+        """
+    }
+    
     static func setTime(time: Double) -> String {
         return """
         tell application "Spotify"

@@ -20,6 +20,10 @@ class NextSongTimer: NSObject {
         print("Timer set for \(time)")
     }
     
+    func invalidateTimer() {
+        timer?.invalidate()
+    }
+    
     @objc func notifyNewSong(){
         UserData.songIndex = (UserData.songIndex+1)%UserData.playlist.count
         NSAppleScript.go(code: NSAppleScript.playSong(uri: UserData.playlist[UserData.songIndex].uri), completionHandler: {_, _, _ in})

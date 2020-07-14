@@ -13,9 +13,16 @@ class UserData {
     
     static var auth: Bool = false
     static var playlist: [Song] = []
+    static var displace: Bool = false
     static var songIndex: Int = 0 {
         didSet {
-            NextSongTimer.instance.initTimer(playlist[songIndex].length)
+            if displace {
+                displace = false
+            } else if playlist.count > 0 {
+                NextSongTimer.instance.initTimer(playlist[songIndex].length)
+            }else {
+                NextSongTimer.instance.invalidateTimer()
+            }
         }
     }
 }
