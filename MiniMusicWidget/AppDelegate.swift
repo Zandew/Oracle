@@ -14,7 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if UserData.auth {
             ShowPopover.showPopover(popView: mainView!, mainView: statusBarItem.button!, behaviour: .transient, side: .maxY)
         } else {
-            NSApp.activate(ignoringOtherApps: true)
             window!.makeKeyAndOrderFront(self)
         }
     }
@@ -37,8 +36,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusButton.action = #selector(toggleWindow(_:))
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURL(event:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
+        NSApp.activate(ignoringOtherApps: true)
         window = NSWindow(contentViewController: loginVC!)
         window!.makeKeyAndOrderFront(self)
+        window!.title = "Login to Spotify"
         controller = NSWindowController(window: window!)
         controller!.showWindow(self)
         

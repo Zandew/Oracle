@@ -5,44 +5,47 @@ struct PlaylistView: View {
     @State var playlist: [Song]
     
     var body: some View {
-        List {
-            ForEach(playlist) { song in
-                HStack {
-                    SongPlaylistView(song: song)
-                    Spacer()
-                    Button(action: {
-                        let index = self.playlist.firstIndex(of: song)!
-                        if UserData.songIndex < index {
-                            UserData.playlist.remove(at: index)
-                            self.playlist.remove(at: index)
-                        }else if UserData.songIndex == index {
-                            if self.playlist.count == 1 {
-                                NSAppleScript.go(code: NSAppleScript.pause(), completionHandler: {_, _, _ in})
+        VStack{
+            Text("Playlist")
+            List {
+                ForEach(playlist) { song in
+                    HStack {
+                        SongPlaylistView(song: song)
+                        Spacer()
+                        Button(action: {
+                            let index = self.playlist.firstIndex(of: song)!
+                            if UserData.songIndex < index {
                                 UserData.playlist.remove(at: index)
                                 self.playlist.remove(at: index)
-                                UserData.songIndex = 0
-                            }else {
-                                if index == self.playlist.count-1 {
-                                    NSAppleScript.go(code: NSAppleScript.playSong(uri: self.playlist[0].uri), completionHandler:  {_, _, _ in})
+                            }else if UserData.songIndex == index {
+                                if self.playlist.count == 1 {
+                                    NSAppleScript.go(code: NSAppleScript.pause(), completionHandler: {_, _, _ in})
+                                    UserData.playlist.remove(at: index)
+                                    self.playlist.remove(at: index)
+                                    UserData.songIndex = 0
                                 }else {
-                                    NSAppleScript.go(code: NSAppleScript.playSong(uri: self.playlist[index+1].uri), completionHandler:  {_, _, _ in})
+                                    if index == self.playlist.count-1 {
+                                        NSAppleScript.go(code: NSAppleScript.playSong(uri: self.playlist[0].uri), completionHandler:  {_, _, _ in})
+                                    }else {
+                                        NSAppleScript.go(code: NSAppleScript.playSong(uri: self.playlist[index+1].uri), completionHandler:  {_, _, _ in})
+                                    }
+                                    UserData.playlist.remove(at: index)
+                                    self.playlist.remove(at: index)
+                                    UserData.songIndex = UserData.songIndex%UserData.playlist.count
                                 }
+                            }else {
                                 UserData.playlist.remove(at: index)
                                 self.playlist.remove(at: index)
-                                UserData.songIndex = UserData.songIndex%UserData.playlist.count
+                                UserData.displace = true
+                                UserData.songIndex -= 1
                             }
-                        }else {
-                            UserData.playlist.remove(at: index)
-                            self.playlist.remove(at: index)
-                            UserData.displace = true
-                            UserData.songIndex -= 1
-                        }
-                    }) {
-                        Image("trash")
-                    }.buttonStyle(PlainButtonStyle())
+                        }) {
+                            Image("trash")
+                        }.buttonStyle(PlainButtonStyle())
+                    }
                 }
+                .onMove(perform: move)
             }
-            .onMove(perform: move)
         }
     }
     
@@ -75,5 +78,11 @@ struct PlaylistView: View {
         NotificationCenter.default.post(name: Notification.Name("initTimer"), object: nil)
     }
 
+}
+
+struct Preview: PreviewProvider {
+    static var previews: some View {
+        PlaylistView(playlist: [])
+    }
 }
 

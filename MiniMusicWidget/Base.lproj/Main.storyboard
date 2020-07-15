@@ -817,27 +817,6 @@
             </objects>
             <point key="canvasLocation" x="543" y="444"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="Zat-Lo-JCM">
-            <objects>
-                <windowController storyboardIdentifier="LoginWC" id="S5V-00-9W8" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="gCd-8T-2KS" customClass="LoginWC">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="S5V-00-9W8" id="6lu-zn-dxC"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="aV2-qW-Ub7" kind="relationship" relationship="window.shadowedContentViewController" id="hcb-9w-lVk"/>
-                    </connections>
-                </windowController>
-                <customObject id="VbN-U7-sJz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-953" y="519"/>
-        </scene>
         <!--Main LoginVC-->
         <scene sceneID="kEk-eS-tRD">
             <objects>

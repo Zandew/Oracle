@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */; };
-		286F18A224B9E9DD00156709 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A124B9E9DD00156709 /* Extensions.swift */; };
 		286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A324B9ED7300156709 /* MainLoginVC.swift */; };
 		2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881775D24B7607B0097B8D5 /* UserSettings.swift */; };
 		2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPIManager.swift; sourceTree = "<group>"; };
-		286F18A124B9E9DD00156709 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainLoginVC.swift; path = "MiniMusicWidget/View Controllers/MainLoginVC.swift"; sourceTree = SOURCE_ROOT; };
 		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginVC.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				2886E06A24B6696D00331B4D /* Alamofire.swift */,
-				286F18A124B9E9DD00156709 /* Extensions.swift */,
 				2888225124BCF8A800A30F59 /* NextSongTimer.swift */,
 				2886E06C24B6697F00331B4D /* Scripts.swift */,
 				2886E06824B6694D00331B4D /* ShowPopover.swift */,
@@ -286,7 +283,6 @@
 				2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */,
 				2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */,
 				2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */,
-				286F18A224B9E9DD00156709 /* Extensions.swift in Sources */,
 				2886E06B24B6696D00331B4D /* Alamofire.swift in Sources */,
 				2886E06324B6690400331B4D /* SongViews.swift in Sources */,
 				2886E05D24B668A400331B4D /* MainVC.swift in Sources */,

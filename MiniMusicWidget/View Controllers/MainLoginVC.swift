@@ -13,7 +13,6 @@ class MainLoginVC: NSViewController {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.navigationDelegate = self
-        webView.cleanAllCookies()
         
         spotifyManager.oauth2.authorizeURLHandler = self
         spotifyManager.authorizeScope()
@@ -42,13 +41,12 @@ extension MainLoginVC: WKNavigationDelegate{
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void){
         
-        if(navigationAction.navigationType == .other)
-        {
-            if navigationAction.request.url != nil
-            {
-
-                // Initial or access token request
+        if(navigationAction.navigationType == .other) {
+            if navigationAction.request.url != nil{
                 if navigationAction.request.url?.lastPathComponent == "authorize" || navigationAction.request.url?.host == "localhost"{
+                    if navigationAction.request.url?.host == "localhost" {
+                        UserData.auth = true
+                    }
                     decisionHandler(.allow)
                     return
                     
