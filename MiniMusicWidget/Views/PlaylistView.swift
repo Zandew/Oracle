@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PlaylistView: View {
     
-    @State var playlist: [Song]
+    @State var playlist: [Song] = []
     
     var body: some View {
         VStack{
@@ -15,7 +15,9 @@ struct PlaylistView: View {
                 }
                 .onMove(perform: move)
             }
-        }
+        }.onAppear(perform: {
+            self.playlist = UserData.playlist
+        })
     }
     
     func remove(song: Song) {

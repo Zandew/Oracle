@@ -15,16 +15,16 @@
 		2886E05124B6683400331B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2886E05024B6683400331B4D /* Assets.xcassets */; };
 		2886E05424B6683400331B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2886E05224B6683400331B4D /* Main.storyboard */; };
 		2886E05D24B668A400331B4D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E05C24B668A400331B4D /* MainVC.swift */; };
-		2886E05F24B668C400331B4D /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E05E24B668C400331B4D /* SearchVC.swift */; };
 		2886E06124B668E200331B4D /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06024B668E200331B4D /* Song.swift */; };
 		2886E06324B6690400331B4D /* SongViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06224B6690400331B4D /* SongViews.swift */; };
 		2886E06524B6692300331B4D /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06424B6692300331B4D /* SearchResultsView.swift */; };
 		2886E06724B6693800331B4D /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06624B6693800331B4D /* PlaylistView.swift */; };
-		2886E06924B6694D00331B4D /* ShowPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06824B6694D00331B4D /* ShowPopover.swift */; };
 		2886E06B24B6696D00331B4D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06A24B6696D00331B4D /* Alamofire.swift */; };
 		2886E06D24B6697F00331B4D /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06C24B6697F00331B4D /* Scripts.swift */; };
 		2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888225124BCF8A800A30F59 /* NextSongTimer.swift */; };
 		28B88F8124C0A0E400FA42CB /* PlaylistRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */; };
+		28B88F8324C0D14B00FA42CB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B88F8224C0D14B00FA42CB /* SearchView.swift */; };
+		28B88F8524C0EFDE00FA42CB /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B88F8424C0EFDE00FA42CB /* Popover.swift */; };
 		AED80CEC4905F999A3EA4625 /* Pods_MiniMusicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7824111F70174BAB1826D2B2 /* Pods_MiniMusicWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,16 +40,16 @@
 		2886E05524B6683400331B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2886E05624B6683400331B4D /* MiniMusicWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniMusicWidget.entitlements; sourceTree = "<group>"; };
 		2886E05C24B668A400331B4D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = "MiniMusicWidget/View Controllers/MainVC.swift"; sourceTree = SOURCE_ROOT; };
-		2886E05E24B668C400331B4D /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		2886E06024B668E200331B4D /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		2886E06224B6690400331B4D /* SongViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViews.swift; sourceTree = "<group>"; };
 		2886E06424B6692300331B4D /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		2886E06624B6693800331B4D /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
-		2886E06824B6694D00331B4D /* ShowPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopover.swift; sourceTree = "<group>"; };
 		2886E06A24B6696D00331B4D /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		2886E06C24B6697F00331B4D /* Scripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
 		2888225124BCF8A800A30F59 /* NextSongTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSongTimer.swift; sourceTree = "<group>"; };
 		28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRowView.swift; sourceTree = "<group>"; };
+		28B88F8224C0D14B00FA42CB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = MiniMusicWidget/SearchView.swift; sourceTree = SOURCE_ROOT; };
+		28B88F8424C0EFDE00FA42CB /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		7824111F70174BAB1826D2B2 /* Pods_MiniMusicWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniMusicWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7956921131A3449238C6E304 /* Pods-MiniMusicWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniMusicWidget.release.xcconfig"; path = "Target Support Files/Pods-MiniMusicWidget/Pods-MiniMusicWidget.release.xcconfig"; sourceTree = "<group>"; };
 		E0AF2CE9441513E5B42270AB /* Pods-MiniMusicWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniMusicWidget.debug.xcconfig"; path = "Target Support Files/Pods-MiniMusicWidget/Pods-MiniMusicWidget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +70,7 @@
 		286F18C524BA632C00156709 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28B88F8224C0D14B00FA42CB /* SearchView.swift */,
 				2886E06624B6693800331B4D /* PlaylistView.swift */,
 				28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */,
 				2886E06424B6692300331B4D /* SearchResultsView.swift */,
@@ -84,9 +85,9 @@
 				2886E06A24B6696D00331B4D /* Alamofire.swift */,
 				2888225124BCF8A800A30F59 /* NextSongTimer.swift */,
 				2886E06C24B6697F00331B4D /* Scripts.swift */,
-				2886E06824B6694D00331B4D /* ShowPopover.swift */,
 				2886E06024B668E200331B4D /* Song.swift */,
 				286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */,
+				28B88F8424C0EFDE00FA42CB /* Popover.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -104,7 +105,6 @@
 			children = (
 				286F18A324B9ED7300156709 /* MainLoginVC.swift */,
 				2886E05C24B668A400331B4D /* MainVC.swift */,
-				2886E05E24B668C400331B4D /* SearchVC.swift */,
 				2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */,
 			);
 			path = "View Controllers";
@@ -275,15 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2886E06924B6694D00331B4D /* ShowPopover.swift in Sources */,
 				2886E06124B668E200331B4D /* Song.swift in Sources */,
 				2886E06724B6693800331B4D /* PlaylistView.swift in Sources */,
 				286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */,
 				2886E06524B6692300331B4D /* SearchResultsView.swift in Sources */,
 				28B88F8124C0A0E400FA42CB /* PlaylistRowView.swift in Sources */,
+				28B88F8524C0EFDE00FA42CB /* Popover.swift in Sources */,
+				28B88F8324C0D14B00FA42CB /* SearchView.swift in Sources */,
 				286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */,
 				2886E06D24B6697F00331B4D /* Scripts.swift in Sources */,
-				2886E05F24B668C400331B4D /* SearchVC.swift in Sources */,
 				2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */,
 				2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */,
 				2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */,

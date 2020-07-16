@@ -13,6 +13,7 @@ class AlamoRequest {
     typealias JSONStandard = [String : AnyObject]
 
     static func searchSong(url: String) {
+        print(url)
         AF.request(url, method: .get, headers: headers).responseJSON(completionHandler: {
             response in
             self.parseData(JSONData: response.data!)

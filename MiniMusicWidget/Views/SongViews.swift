@@ -9,6 +9,7 @@ struct SongSearchView: View {
             Image(nsImage: song.image!)
                 .resizable()
                 .frame(width: 100, height: 100)
+                .cornerRadius(10)
             Text(song.name)
             Spacer()
             VStack {

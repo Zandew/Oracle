@@ -7,6 +7,9 @@ import OAuthSwift
 class MainVC: NSViewController {
     
     var searchView: NSViewController?
+    var searchPopover: NSPopover?
+    var playlistPopover: NSPopover?
+    @State var binding: String = ""
     
     @IBOutlet weak var previousButton: NSButton!
     @IBOutlet weak var playPauseButton: NSButton!
@@ -28,6 +31,11 @@ class MainVC: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(invalidateTimer), name: Notification.Name("invalidateTimer"), object: nil)
         
         NotificationCenter.default.post(name: Notification.Name("initTimer"), object: nil)
+        
+        let searchHC = NSHostingController(rootView: SearchView())
+        searchPopover = Popover.createPopover(popView: searchHC)
+        let playlistHC = NSHostingController(rootView: PlaylistView())
+        playlistPopover = Popover.createPopover(popView: playlistHC)
     }
     
     @IBAction func previousPressed(_ sender: Any) {
@@ -58,12 +66,11 @@ class MainVC: NSViewController {
     }
     
     @IBAction func playlistPressed(_ sender: Any) {
-        let hostingController = NSHostingController(rootView: PlaylistView(playlist: UserData.playlist))
-        ShowPopover.showPopover(popView: hostingController, mainView: playlistButton, behaviour: .transient, side: .maxY)
+        Popover.showPopover(popoverView: playlistPopover!, mainView: playlistButton, side: .maxY)
     }
     
     @IBAction func addSongPressed(_ sender: Any) {
-        ShowPopover.showPopover(popView: searchView!, mainView: addSongButton, behaviour: .transient, side: .maxY)
+        Popover.showPopover(popoverView: searchPopover!, mainView: addSongButton, side: .maxY)
     }
     
     @objc func initTimer() {
