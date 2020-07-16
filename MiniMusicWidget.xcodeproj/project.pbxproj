@@ -24,6 +24,7 @@
 		2886E06B24B6696D00331B4D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06A24B6696D00331B4D /* Alamofire.swift */; };
 		2886E06D24B6697F00331B4D /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E06C24B6697F00331B4D /* Scripts.swift */; };
 		2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888225124BCF8A800A30F59 /* NextSongTimer.swift */; };
+		28B88F8124C0A0E400FA42CB /* PlaylistRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */; };
 		AED80CEC4905F999A3EA4625 /* Pods_MiniMusicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7824111F70174BAB1826D2B2 /* Pods_MiniMusicWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		2886E06A24B6696D00331B4D /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		2886E06C24B6697F00331B4D /* Scripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
 		2888225124BCF8A800A30F59 /* NextSongTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSongTimer.swift; sourceTree = "<group>"; };
+		28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRowView.swift; sourceTree = "<group>"; };
 		7824111F70174BAB1826D2B2 /* Pods_MiniMusicWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniMusicWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7956921131A3449238C6E304 /* Pods-MiniMusicWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniMusicWidget.release.xcconfig"; path = "Target Support Files/Pods-MiniMusicWidget/Pods-MiniMusicWidget.release.xcconfig"; sourceTree = "<group>"; };
 		E0AF2CE9441513E5B42270AB /* Pods-MiniMusicWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniMusicWidget.debug.xcconfig"; path = "Target Support Files/Pods-MiniMusicWidget/Pods-MiniMusicWidget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2886E06624B6693800331B4D /* PlaylistView.swift */,
+				28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */,
 				2886E06424B6692300331B4D /* SearchResultsView.swift */,
 				2886E06224B6690400331B4D /* SongViews.swift */,
 			);
@@ -277,6 +280,7 @@
 				2886E06724B6693800331B4D /* PlaylistView.swift in Sources */,
 				286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */,
 				2886E06524B6692300331B4D /* SearchResultsView.swift in Sources */,
+				28B88F8124C0A0E400FA42CB /* PlaylistRowView.swift in Sources */,
 				286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */,
 				2886E06D24B6697F00331B4D /* Scripts.swift in Sources */,
 				2886E05F24B668C400331B4D /* SearchVC.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import OAuthSwift
+import WebKit
 
 class SpotifyAPIManager{
     
@@ -42,7 +43,7 @@ class SpotifyAPIManager{
             scope: "user-library-modify playlist-read-collaborative playlist-read-private playlist-modify-private playlist-modify-public user-read-currently-playing user-modify-playback-state user-read-playback-state user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read  user-read-private",
             state: "test12345") { result in
                 switch result {
-                case .success(let (_, _, _)):
+                case .success( (_, _, _)):
                     print("Authorization Success")
                 case .failure(let error):
                     print(error.description)
@@ -51,9 +52,22 @@ class SpotifyAPIManager{
 
     }
     
-    func authorizeWithRequestToken(code:String) {
+    func authorizeWithRequestToken(navigationAction: WKNavigationAction) {
+        var code:String? = nil
+
+        if let queryItems = NSURLComponents(string: navigationAction.request.url!.description)?.queryItems {
+            
+            for item in queryItems {
+                if item.name == "code" {
+                    if let itemValue = item.value {
+                        code = itemValue
+                    }
+                }
+            }
+            
+        }
         
-        oauth2.postOAuthAccessTokenWithRequestToken(byCode: code, callbackURL: URL.init(string: "http://localhost:8080")!) { result in
+        oauth2.postOAuthAccessTokenWithRequestToken(byCode: code!, callbackURL: URL.init(string: "http://localhost:8080")!) { result in
             
             switch result{
                 
@@ -62,8 +76,7 @@ class SpotifyAPIManager{
                 
             case .success(let response):
                 
-                print("Received Authorization Token: ")
-                print(response)
+                print("Received Authorization Token")
                 
                 if let access_token = response.parameters["access_token"], let refresh_token = response.parameters["refresh_token"], let expires = response.parameters["expires_in"], let scope = response.parameters["scope"]{
                     

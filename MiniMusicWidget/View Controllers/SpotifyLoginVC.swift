@@ -42,7 +42,7 @@ class SpotifyLoginVC: NSViewController {
 extension SpotifyLoginVC: WKNavigationDelegate{
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void){
-
+        print("HELLO")
         if(navigationAction.navigationType == .other){
 
             if navigationAction.request.url != nil{
@@ -56,9 +56,7 @@ extension SpotifyLoginVC: WKNavigationDelegate{
                 // If user is logged in already, and App authorized, the first redirect from Spotify
                 // returns the code required for the Access and Refresh tokens
                 if navigationAction.request.url?.host == "localhost"{
-                    let code = parseCodeAndStateFromURL(navigationAction: navigationAction)
-
-                    self.spotifyManager.authorizeWithRequestToken(code: code!)
+                    self.spotifyManager.authorizeWithRequestToken(navigationAction: navigationAction)
 
                     decisionHandler(.cancel)
                     self.dismiss(nil)
@@ -93,9 +91,7 @@ extension SpotifyLoginVC: WKNavigationDelegate{
             // and get access and refresh tokens.
             }else if navigationAction.request.url?.host == "localhost"{
 
-                let code = parseCodeAndStateFromURL(navigationAction: navigationAction)
-
-                self.spotifyManager.authorizeWithRequestToken(code: code!)
+                self.spotifyManager.authorizeWithRequestToken(navigationAction: navigationAction)
 
                 decisionHandler(.cancel)
                 self.dismiss(nil)
@@ -105,26 +101,6 @@ extension SpotifyLoginVC: WKNavigationDelegate{
         }
 
         decisionHandler(.cancel)
-
-    }
-    
-    private func parseCodeAndStateFromURL(navigationAction: WKNavigationAction) -> String?{
-
-        var code:String? = nil
-
-        if let queryItems = NSURLComponents(string: navigationAction.request.url!.description)?.queryItems {
-            
-            for item in queryItems {
-                if item.name == "code" {
-                    if let itemValue = item.value {
-                        code = itemValue
-                    }
-                }
-            }
-            
-        }
-        
-        return code
 
     }
 }

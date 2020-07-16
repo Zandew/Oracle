@@ -16,14 +16,14 @@ class SearchVC: NSViewController {
     @IBAction func searchButtonPressed(_ sender: Any) {
         if searchField.stringValue != "" {
             let search = searchField.stringValue.replacingOccurrences(of: " ", with: "%20")
-            AlamoRequest.get(url: "https://api.spotify.com/v1/search?q=\(search)&type=track")
+            AlamoRequest.searchSong(url: "https://api.spotify.com/v1/search?q=\(search)&type=track")
             //let hostingController = NSHostingController(rootView: SearchResultsView(results: AlamoRequest.songList!))
         }
     }
     
     @objc func showResults() {
         let hostingController = NSHostingController(rootView: SearchResultsView(results: AlamoRequest.songList))
-        ShowPopover.showPopover(popView: hostingController, mainView: searchButton, behaviour: .transient, side: .maxY)
+        ShowPopover.showPopover(popView: hostingController, mainView: self.view, behaviour: .transient, side: .maxY)
     }
     
 }

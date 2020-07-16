@@ -11,8 +11,8 @@ class AlamoRequest {
     static var songList: [Song] = []
     
     typealias JSONStandard = [String : AnyObject]
-    
-    static func get(url: String){
+
+    static func searchSong(url: String) {
         AF.request(url, method: .get, headers: headers).responseJSON(completionHandler: {
             response in
             self.parseData(JSONData: response.data!)
