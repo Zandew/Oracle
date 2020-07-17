@@ -1,11 +1,3 @@
-//
-//  PlaylistRowView.swift
-//  MiniMusicWidget
-//
-//  Created by Andrew Xue on 2020-07-16.
-//  Copyright © 2020 Andrew Xue. All rights reserved.
-//
-
 import SwiftUI
 
 struct PlaylistRowView: View {

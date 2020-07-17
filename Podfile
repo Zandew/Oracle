@@ -7,5 +7,4 @@ target 'MiniMusicWidget' do
 	pod 'Alamofire', '~> 5.2'
 	pod 'OAuthSwift', '~> 2.0.0'
 
-
 end

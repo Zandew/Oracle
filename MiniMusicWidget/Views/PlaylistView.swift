@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PlaylistView: View {
     
-    @State var playlist: [Song] = []
+    @State var playlist: [Song]
     
     var body: some View {
         VStack{
@@ -15,9 +15,7 @@ struct PlaylistView: View {
                 }
                 .onMove(perform: move)
             }
-        }.onAppear(perform: {
-            self.playlist = UserData.playlist
-        })
+        }
     }
     
     func remove(song: Song) {
@@ -78,11 +76,5 @@ struct PlaylistView: View {
         NotificationCenter.default.post(name: Notification.Name("initTimer"), object: nil)
     }
 
-}
-
-struct Preview: PreviewProvider {
-    static var previews: some View {
-        PlaylistView(playlist: [])
-    }
 }
 
