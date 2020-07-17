@@ -11,6 +11,7 @@ struct SongSearchView: View {
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
             Text(song.name)
+                .lineLimit(1)
             Spacer()
             VStack {
                 ForEach(song.artists, id: \.self) { artist in
@@ -30,11 +31,5 @@ struct SongPlaylistView: View {
             .resizable()
             .frame(width: 75, height: 75)
             .cornerRadius(10)
-    }
-}
-
-struct SongInfoView: View {
-    var body: some View {
-        Text("Hello")
     }
 }

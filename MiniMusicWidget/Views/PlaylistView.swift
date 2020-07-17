@@ -2,6 +2,8 @@ import SwiftUI
 
 struct PlaylistView: View {
     
+    let pub = NotificationCenter.default.publisher(for: NSNotification.Name("refreshPlaylist"))
+    
     @State var playlist: [Song]
     
     var body: some View {
@@ -10,11 +12,18 @@ struct PlaylistView: View {
             Text("Playlist")
                 .bold()
             List {
-                ForEach(playlist) { song in
-                    PlaylistRowView(playlistView: self, song: song)
+                ForEach(0..<playlist.count) {
+                    PlaylistRowView(playlistView: self, song: self.playlist[$0], idx: $0)
                 }
                 .onMove(perform: move)
+                /*ForEach(playlist) { song in
+                    PlaylistRowView(playlistView: self, song: song)
+                }
+                .onMove(perform: move)*/
             }
+        }
+        .onReceive(pub) { _ in
+            self.refreshPlaylist()
         }
     }
     
@@ -74,6 +83,10 @@ struct PlaylistView: View {
             }
         }
         NotificationCenter.default.post(name: Notification.Name("initTimer"), object: nil)
+    }
+    
+    func refreshPlaylist() {
+        self.playlist = UserData.playlist
     }
 
 }

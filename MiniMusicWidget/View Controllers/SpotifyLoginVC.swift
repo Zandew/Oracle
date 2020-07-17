@@ -34,7 +34,6 @@ class SpotifyLoginVC: NSViewController {
 extension SpotifyLoginVC: WKNavigationDelegate{
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void){
-        print("HELLO")
         if(navigationAction.navigationType == .other){
 
             if navigationAction.request.url != nil{

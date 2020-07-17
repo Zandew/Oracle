@@ -37,7 +37,7 @@ struct SearchView: View {
             }
         }
         .onAppear(perform: loadResults)
-        .onReceive(pub) { output in
+        .onReceive(pub) { _ in
             self.loadResults()
         }
     }

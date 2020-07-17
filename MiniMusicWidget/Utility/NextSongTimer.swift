@@ -17,6 +17,7 @@ class NextSongTimer: NSObject {
     
     @objc func notifyNewSong(){
         UserData.songIndex = (UserData.songIndex+1)%UserData.playlist.count
+        NotificationCenter.default.post(name: Notification.Name("refreshPlaylist"), object: nil)
         NSAppleScript.go(code: NSAppleScript.playSong(uri: UserData.playlist[UserData.songIndex].uri), completionHandler: {_, _, _ in})
     }
     
