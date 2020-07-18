@@ -8,7 +8,9 @@ class MainVC: NSViewController {
     
     var searchPopover: NSPopover?
     var playlistPopover: NSPopover?
-    @State var binding: String = ""
+    var TAWindow: NSWindow?
+    var TAController: NSWindowController?
+
     
     @IBOutlet weak var previousButton: NSButton!
     @IBOutlet weak var playPauseButton: NSButton!
@@ -17,6 +19,7 @@ class MainVC: NSViewController {
     @IBOutlet weak var addSongButton: NSButton!
     @IBOutlet weak var playlistButton: NSButton!
     @IBOutlet weak var songName: NSTextField!
+    @IBOutlet weak var magicButton: NSButton!
     
     var timer: Timer?
     
@@ -31,6 +34,13 @@ class MainVC: NSViewController {
         
         let searchHC = NSHostingController(rootView: SearchView())
         searchPopover = Popover.createPopover(popView: searchHC)
+        NSApp.activate(ignoringOtherApps: true)
+        let vc = NSHostingController(rootView: ToneAnalyzerView())
+        TAWindow = NSWindow(contentViewController: vc)
+        TAWindow?.setFrame(NSMakeRect(100, 100, 500, 300), display: true)
+        TAWindow?.makeKeyAndOrderFront(self)
+        TAController = NSWindowController(window: TAWindow)
+        TAController?.showWindow(self)
     }
     
     @IBAction func previousPressed(_ sender: Any) {
@@ -64,6 +74,12 @@ class MainVC: NSViewController {
         let playlistHC = NSHostingController(rootView: PlaylistView(playlist: UserData.playlist))
         playlistPopover = Popover.createPopover(popView: playlistHC)
         Popover.showPopover(popoverView: playlistPopover!, mainView: playlistButton, side: .maxY)
+    }
+    
+    @IBAction func magicPressed(_ sender: Any) {
+        NSApp.activate(ignoringOtherApps: true)
+        TAWindow!.makeKeyAndOrderFront(self)
+        TAController?.showWindow(self)
     }
     
     @IBAction func addSongPressed(_ sender: Any) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		286F189E24B9E72E00156709 /* SpotifyAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */; };
 		286F18A424B9ED7300156709 /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F18A324B9ED7300156709 /* MainLoginVC.swift */; };
+		2872151324C3A3320063B731 /* ToneAnalyzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872151224C3A3320063B731 /* ToneAnalyzerView.swift */; };
 		2881775E24B7607B0097B8D5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881775D24B7607B0097B8D5 /* UserSettings.swift */; };
 		2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */; };
 		2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886E04C24B6683300331B4D /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		286F189D24B9E72E00156709 /* SpotifyAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPIManager.swift; sourceTree = "<group>"; };
 		286F18A324B9ED7300156709 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainLoginVC.swift; path = "MiniMusicWidget/View Controllers/MainLoginVC.swift"; sourceTree = SOURCE_ROOT; };
+		2872151224C3A3320063B731 /* ToneAnalyzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneAnalyzerView.swift; sourceTree = "<group>"; };
 		2881775D24B7607B0097B8D5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2884A0FB24B8EEF600C74053 /* SpotifyLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyLoginVC.swift; sourceTree = "<group>"; };
 		2886E04924B6683300331B4D /* MiniMusicWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniMusicWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 				28B88F8024C0A0E400FA42CB /* PlaylistRowView.swift */,
 				2886E06424B6692300331B4D /* SearchResultsView.swift */,
 				2886E06224B6690400331B4D /* SongViews.swift */,
+				2872151224C3A3320063B731 /* ToneAnalyzerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				2886E06D24B6697F00331B4D /* Scripts.swift in Sources */,
 				2886E04D24B6683300331B4D /* AppDelegate.swift in Sources */,
 				2888225224BCF8A800A30F59 /* NextSongTimer.swift in Sources */,
+				2872151324C3A3320063B731 /* ToneAnalyzerView.swift in Sources */,
 				2884A0FC24B8EEF600C74053 /* SpotifyLoginVC.swift in Sources */,
 				2886E06B24B6696D00331B4D /* Alamofire.swift in Sources */,
 				2886E06324B6690400331B4D /* SongViews.swift in Sources */,
