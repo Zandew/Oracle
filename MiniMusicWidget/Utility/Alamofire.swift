@@ -9,18 +9,18 @@ class AlamoRequest {
     ]
     
     static var songList: [Song] = []
+    static var moodList: [String: Double] = [:]
     
     typealias JSONStandard = [String : AnyObject]
 
-    static func searchSong(url: String) {
-        print(url)
+    static func getSongs(url: String) {
         AF.request(url, method: .get, headers: headers).responseJSON(completionHandler: {
             response in
-            self.parseData(JSONData: response.data!)
+            self.parseSongs(JSONData: response.data!)
         })
     }
     
-    static func parseData(JSONData: Data){
+    static func parseSongs(JSONData: Data){
         do {
             self.songList = []
             let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
@@ -56,4 +56,37 @@ class AlamoRequest {
         }
         NotificationCenter.default.post(name: NSNotification.Name("showResults"), object: nil)
     }
+    
+    static func getMoods(text: String) {
+        let urlEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        print(urlEncoded)
+        let request = AF.request("https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/8e999796-5bed-4bee-a2c8-9efddfbbb9ea/v3/tone?version=2017-09-21&text=\(urlEncoded)&sentences=false", method: .get).authenticate(username: "apikey", password: "hbht0Jin2xtngpMLT0PpHFW9TvTz9VuSaV-bCBcu-rel").responseJSON(completionHandler: {
+            response in
+            self.parseMoods(JSONData: response.data!)
+        })
+    }
+    
+    static func parseMoods(JSONData: Data) {
+        do {
+            moodList = [:]
+            let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            if let document_tone = readableJSON["document_tone"] as? JSONStandard {
+                if let tones = document_tone["tones"] as? [JSONStandard] {
+                    for i in 0..<tones.count {
+                        let tone = tones[i]
+                        print(tone["tone_id"] as! String)
+                        moodList[tone["tone_id"] as! String] = (tone["score"] as! Double)
+                    }
+                }
+            }
+            print(moodList)
+        } catch {
+            print(error)
+        }
+    }
+    
+}
+
+enum Mood {
+    
 }

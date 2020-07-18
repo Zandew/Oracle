@@ -18,7 +18,7 @@ struct SearchView: View {
                 Button(action: {
                     var url = "https://api.spotify.com/v1/search?q=\(self.search)&type=track"
                     url = url.replacingOccurrences(of: " ", with: "%20")
-                    AlamoRequest.searchSong(url: url)
+                    AlamoRequest.getSongs(url: url)
                 }) {
                     Text("Search")
                 }
