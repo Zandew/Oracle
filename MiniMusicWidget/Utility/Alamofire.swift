@@ -83,6 +83,7 @@ class AlamoRequest {
         } catch {
             print(error)
         }
+        NotificationCenter.default.post(name: Notification.Name("updateMoods"), object: nil)
     }
     
 }

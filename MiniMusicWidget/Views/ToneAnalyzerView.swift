@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ToneAnalyzerView: View {
     
+    let pub = NotificationCenter.default.publisher(for: NSNotification.Name("updateMoods"))
+    
     @State var text: String = ""
+    @State var moodDict: [String : Double] = [:]
     
     var body: some View {
         HStack {
@@ -23,10 +26,14 @@ struct ToneAnalyzerView: View {
                 }) {
                     Text("Submit")
                 }
+                MoodView(mood: "anger", level: moodDict["anger"] ?? 0)
+                MoodView(mood: "sad", level: moodDict["sad"] ?? 0)
             }
             List {
                 Text("SONG")
             }
+        }.onReceive(pub) { _ in
+            self.moodDict = AlamoRequest.moodList
         }
     }
 }
