@@ -1,11 +1,3 @@
-//
-//  ToneAnalyzerView.swift
-//  MiniMusicWidget
-//
-//  Created by Andrew Xue on 2020-07-18.
-//  Copyright © 2020 Andrew Xue. All rights reserved.
-//
-
 import SwiftUI
 
 struct ToneAnalyzerView: View {
@@ -56,7 +48,13 @@ struct ToneAnalyzerView: View {
             }
             List {
                 ForEach(self.recommendations) { song in
-                    SongRecommendView(song: song)
+                    Button(action: {
+                        UserData.playlist.append(song)
+                        UserData.songIndex = UserData.playlist.count-1
+                        NSAppleScript.go(code: NSAppleScript.playSong(uri: song.uri), completionHandler: {_, _, _ in})
+                    }) {
+                        SongRecommendView(song: song)
+                    }.buttonStyle(PlainButtonStyle())
                 }
             }
         }.onReceive(pub1) { _ in

@@ -24,7 +24,15 @@ struct GenreListView: View {
                 }
                 Spacer()
                 Button(action: {
-                    
+                    self.selected = Array(repeating: false, count: 126)
+                    UserData.queue = []
+                    for _ in 0..<5 {
+                        let random = Int.random(in: 0..<126)
+                        if self.selected[random] == false {
+                            self.selected[random] = true
+                            UserData.add(genre: AlamoRequest.genreList[random])
+                        }
+                    }
                 }) {
                     Text("Randomize")
                 }
