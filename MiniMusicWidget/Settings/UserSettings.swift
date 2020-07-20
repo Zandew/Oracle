@@ -18,4 +18,12 @@ class UserData {
             }
         }
     }
+    static var genres: [String] = ["anime", "classical", "hard-rock", "hip-hop", "pop"]
+    static func getGenres() -> String {
+        var ret = ""
+        for genre in genres {
+            ret += "\(genre)%2C"
+        }
+        return ret
+    }
 }

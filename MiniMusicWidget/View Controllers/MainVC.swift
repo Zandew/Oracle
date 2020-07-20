@@ -9,9 +9,7 @@ class MainVC: NSViewController {
     var searchPopover: NSPopover?
     var playlistPopover: NSPopover?
     var TAWindow: NSWindow?
-    var TAController: NSWindowController?
 
-    
     @IBOutlet weak var previousButton: NSButton!
     @IBOutlet weak var playPauseButton: NSButton!
     @IBOutlet weak var nextButton: NSButton!
@@ -37,10 +35,10 @@ class MainVC: NSViewController {
         NSApp.activate(ignoringOtherApps: true)
         let vc = NSHostingController(rootView: ToneAnalyzerView())
         TAWindow = NSWindow(contentViewController: vc)
+        TAWindow?.title = "Song Recommendations"
+        TAWindow?.styleMask.remove(.resizable)
         TAWindow?.setFrame(NSMakeRect(100, 100, 500, 300), display: true)
-        TAWindow?.makeKeyAndOrderFront(self)
-        TAController = NSWindowController(window: TAWindow)
-        TAController?.showWindow(self)
+        TAWindow?.center()
     }
     
     @IBAction func previousPressed(_ sender: Any) {
@@ -79,7 +77,6 @@ class MainVC: NSViewController {
     @IBAction func magicPressed(_ sender: Any) {
         NSApp.activate(ignoringOtherApps: true)
         TAWindow!.makeKeyAndOrderFront(self)
-        TAController?.showWindow(self)
     }
     
     @IBAction func addSongPressed(_ sender: Any) {

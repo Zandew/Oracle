@@ -10,30 +10,50 @@ import SwiftUI
 
 struct ToneAnalyzerView: View {
     
-    let pub = NotificationCenter.default.publisher(for: NSNotification.Name("updateMoods"))
+    let pub1 = NotificationCenter.default.publisher(for: NSNotification.Name("updateMoods"))
+    let pub2 = NotificationCenter.default.publisher(for: NSNotification.Name("showRecommendations"))
     
     @State var text: String = ""
     @State var moodDict: [String : Double] = [:]
+    @State var recommendations: [Song] = []
     
     var body: some View {
         HStack {
             VStack {
                 TextView(text: $text)
                     .frame(width: 300, height: 150)
-                    .lineLimit(5)
+                    .lineLimit(10)
                 Button(action: {
                     AlamoRequest.getMoods(text: self.text)
                 }) {
                     Text("Submit")
                 }
-                MoodView(mood: "anger", level: moodDict["anger"] ?? 0)
-                MoodView(mood: "sad", level: moodDict["sad"] ?? 0)
+                HStack{
+                    VStack {
+                        MoodView(mood: "anger", level: moodDict["anger"] ?? 0, space: 35)
+                        MoodView(mood: "joy", level: moodDict["joy"] ?? 0, space: 35)
+                        MoodView(mood: "fear", level: moodDict["fear"] ?? 0, space: 35)
+                    }
+                    Spacer()
+                        .frame(width: 40)
+                    VStack {
+                        MoodView(mood: "sadness", level: moodDict["sadness"] ?? 0, space: 60)
+                        MoodView(mood: "confident", level: moodDict["confident"] ?? 0, space: 60)
+                        MoodView(mood: "tentative", level: moodDict["tentative"] ?? 0, space: 60)
+                    }
+                }
             }
             List {
-                Text("SONG")
+                ForEach(self.recommendations) { song in
+                    SongRecommendView(song: song)
+                }
             }
-        }.onReceive(pub) { _ in
+        }.onReceive(pub1) { _ in
             self.moodDict = AlamoRequest.moodList
+            AlamoRequest.getRecommendations()
+        }.onReceive(pub2) { _ in
+            self.recommendations = AlamoRequest.recommendationList
+            print(self.recommendations)
         }
     }
 }
