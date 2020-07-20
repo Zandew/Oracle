@@ -11,6 +11,7 @@ class AlamoRequest {
     static var songList: [Song] = []
     static var moodList: [String: Double] = [:]
     static var recommendationList: [Song] = []
+    static var genreList: [String] = []
     
     typealias JSONStandard = [String : AnyObject]
 
@@ -125,6 +126,25 @@ class AlamoRequest {
             print(error)
         }
         NotificationCenter.default.post(name: Notification.Name("showRecommendations"), object: nil)
+    }
+    
+    static func getGenreSeeds() {
+        AF.request("https://api.spotify.com/v1/recommendations/available-genre-seeds", method: .get, headers: headers).responseJSON(completionHandler: {
+            response in
+            self.parseGenreSeeds(JSONData: response.data!)
+        })
+    }
+    
+    static func parseGenreSeeds(JSONData: Data!) {
+        do {
+            let readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONStandard
+            if let genres = readableJSON["genres"] as? [String] {
+                self.genreList = genres
+            }
+            print(self.genreList.count)
+        } catch {
+            print(error)
+        }
     }
     
 }

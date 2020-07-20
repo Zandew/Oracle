@@ -91,6 +91,8 @@ class SpotifyAPIManager{
                     ]
                     
                     UserData.auth = true
+                    
+                    AlamoRequest.getGenreSeeds()
                 }
             }
         }

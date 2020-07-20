@@ -16,6 +16,7 @@ struct ToneAnalyzerView: View {
     @State var text: String = ""
     @State var moodDict: [String : Double] = [:]
     @State var recommendations: [Song] = []
+    @State var showGenres: Bool = false
     
     var body: some View {
         HStack {
@@ -23,10 +24,20 @@ struct ToneAnalyzerView: View {
                 TextView(text: $text)
                     .frame(width: 300, height: 150)
                     .lineLimit(10)
-                Button(action: {
-                    AlamoRequest.getMoods(text: self.text)
-                }) {
-                    Text("Submit")
+                HStack {
+                    Button(action: {
+                        AlamoRequest.getMoods(text: self.text)
+                    }) {
+                        Text("Submit")
+                    }
+                    Button(action: {
+                        self.showGenres.toggle()
+                    }) {
+                        Text("Genres")
+                    }.sheet(isPresented: $showGenres) {
+                        GenreListView()
+                            .frame(width: 500, height: 300)
+                    }
                 }
                 HStack{
                     VStack {

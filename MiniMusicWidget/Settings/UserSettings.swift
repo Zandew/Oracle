@@ -18,12 +18,23 @@ class UserData {
             }
         }
     }
-    static var genres: [String] = ["anime", "classical", "hard-rock", "hip-hop", "pop"]
+    static var queue: [String] = ["anime", "classical", "hard-rock", "hip-hop", "pop"]
     static func getGenres() -> String {
         var ret = ""
-        for genre in genres {
+        for genre in queue {
             ret += "\(genre)%2C"
         }
         return ret
+    }
+    static func add(genre: String) -> String?{
+        self.queue.append(genre)
+        if queue.count > 5 {
+            return queue.remove(at: 0)
+        }else {
+            return nil
+        }
+    }
+    static func remove(genre: String) {
+        queue.remove(at: queue.firstIndex(of: genre)!)
     }
 }

@@ -45,7 +45,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window!.title = "Login to Spotify"
         controller = NSWindowController(window: window!)
         controller!.showWindow(self)
-        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
