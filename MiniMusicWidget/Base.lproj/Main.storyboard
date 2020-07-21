@@ -686,11 +686,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainVC" id="7YD-tb-kQr" customClass="MainVC" customModule="MiniMusicWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JB6-PR-TeX">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="249" height="264"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esm-md-qdQ">
-                                <rect key="frame" x="163" y="202" width="48" height="48"/>
+                                <rect key="frame" x="114" y="87" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarPlayPauseTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3T7-fG-lKW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -701,9 +701,9 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n98-mZ-NRx">
-                                <rect key="frame" x="299" y="202" width="48" height="48"/>
+                                <rect key="frame" x="172" y="87" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2A-Xr-Wg3">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2A-Xr-Wg3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -712,7 +712,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-9g-zcE">
-                                <rect key="frame" x="299" y="20" width="48" height="48"/>
+                                <rect key="frame" x="184" y="8" width="28" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xvr-0L-S2X">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -723,7 +723,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOD-Y0-IU6">
-                                <rect key="frame" x="30" y="202" width="48" height="48"/>
+                                <rect key="frame" x="64" y="87" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="bsK-YV-6p8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -734,7 +734,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTH-dt-Zy3">
-                                <rect key="frame" x="30" y="20" width="48" height="48"/>
+                                <rect key="frame" x="37" y="8" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSIconViewTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="CNF-09-SJJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -744,17 +744,8 @@
                                     <action selector="playlistPressed:" target="7YD-tb-kQr" id="bk5-IJ-Cuy"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-ss-i5Q">
-                                <rect key="frame" x="65" y="130" width="245" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" bezelStyle="round" id="Kdd-Qu-wai">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGu-VP-LBC">
-                                <rect key="frame" x="74" y="83" width="227" height="19"/>
+                                <rect key="frame" x="11" y="65" width="227" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="46T-2Q-aAp">
                                     <connections>
@@ -763,7 +754,7 @@
                                 </sliderCell>
                             </slider>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-Sq-KPg">
-                                <rect key="frame" x="163" y="20" width="48" height="48"/>
+                                <rect key="frame" x="110" y="8" width="28" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="magic8ball" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vvU-hj-Lyb">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -773,22 +764,37 @@
                                     <action selector="magicPressed:" target="7YD-tb-kQr" id="ArR-lR-0gO"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdG-rM-VcP">
+                                <rect key="frame" x="37" y="115" width="175" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YZe-gh-G4V"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="197" translatesAutoresizingMaskIntoConstraints="NO" id="5ou-9D-eMq">
+                                <rect key="frame" x="23" y="38" width="203" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" borderStyle="border" alignment="center" title="Label" drawsBackground="YES" id="rdO-XQ-JeK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="addSongButton" destination="mHY-9g-zcE" id="9r9-ON-k2B"/>
+                        <outlet property="imageCell" destination="xdG-rM-VcP" id="RYb-uL-BE7"/>
                         <outlet property="magicButton" destination="Lhp-Sq-KPg" id="o6b-0Z-De2"/>
                         <outlet property="musicSlider" destination="46T-2Q-aAp" id="hnP-FH-lDt"/>
                         <outlet property="nextButton" destination="n98-mZ-NRx" id="UDB-fG-Jhm"/>
                         <outlet property="playPauseButton" destination="Esm-md-qdQ" id="P1U-IK-ZQv"/>
                         <outlet property="playlistButton" destination="sTH-dt-Zy3" id="ZFs-qW-B2M"/>
                         <outlet property="previousButton" destination="JOD-Y0-IU6" id="1uG-bD-cHx"/>
-                        <outlet property="songName" destination="EaF-ss-i5Q" id="MvR-Bu-D7b"/>
+                        <outlet property="songName" destination="5ou-9D-eMq" id="Msh-VT-e2v"/>
                     </connections>
                 </viewController>
                 <customObject id="SFH-TG-SZu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="329"/>
+            <point key="canvasLocation" x="-76.5" y="326"/>
         </scene>
         <!--Main LoginVC-->
         <scene sceneID="kEk-eS-tRD">

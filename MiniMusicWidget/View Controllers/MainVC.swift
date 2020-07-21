@@ -18,6 +18,7 @@ class MainVC: NSViewController {
     @IBOutlet weak var playlistButton: NSButton!
     @IBOutlet weak var songName: NSTextField!
     @IBOutlet weak var magicButton: NSButton!
+    @IBOutlet weak var imageCell: NSImageView!
     
     var timer: Timer?
     
@@ -99,8 +100,10 @@ class MainVC: NSViewController {
                 let tot = UserData.playlist[UserData.songIndex].length
                 musicSlider.doubleValue = out/tot
             })
+            imageCell.image = UserData.playlist[UserData.songIndex].image!
         }else {
             songName.stringValue = "No Song Currently Playing"
+            imageCell.image = nil
         }
     }
 
