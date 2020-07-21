@@ -9,7 +9,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var mainPopover: NSPopover?
     var loginVC: NSViewController?
     var window: NSWindow?
-    var controller: NSWindowController?
 
     @objc func toggleWindow(_: Any?){
         if UserData.auth {
@@ -39,17 +38,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         mainPopover = Popover.createPopover(popView: mainView!)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(closeLogin), name: Notification.Name("closeLogin"), object: nil)
+        
         NSApp.activate(ignoringOtherApps: true)
         window = NSWindow(contentViewController: loginVC!)
         window!.makeKeyAndOrderFront(self)
         window!.title = "Login to Spotify"
-        controller = NSWindowController(window: window!)
-        controller!.showWindow(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    
+    @objc func closeLogin() {
+        window!.close()
+    }
+    
 }
 

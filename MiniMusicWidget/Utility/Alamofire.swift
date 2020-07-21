@@ -141,7 +141,6 @@ class AlamoRequest {
             if let genres = readableJSON["genres"] as? [String] {
                 self.genreList = genres
             }
-            print(self.genreList.count)
         } catch {
             print(error)
         }

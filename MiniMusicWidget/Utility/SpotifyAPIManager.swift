@@ -93,6 +93,8 @@ class SpotifyAPIManager{
                     UserData.auth = true
                     
                     AlamoRequest.getGenreSeeds()
+                    
+                    NotificationCenter.default.post(name: Notification.Name("closeLogin"), object: nil)
                 }
             }
         }

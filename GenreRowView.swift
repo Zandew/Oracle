@@ -7,6 +7,6 @@ struct GenreRowView: View {
     
     var body: some View {
         Text(genre)
-            .foregroundColor(pressed ? .blue : .red)
+            .foregroundColor(pressed ? .blue : .white)
     }
 }
