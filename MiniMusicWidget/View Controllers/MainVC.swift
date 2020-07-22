@@ -19,6 +19,7 @@ class MainVC: NSViewController {
     @IBOutlet weak var songName: NSTextField!
     @IBOutlet weak var magicButton: NSButton!
     @IBOutlet weak var imageCell: NSImageView!
+    @IBOutlet weak var closeButton: NSButton!
     
     var timer: Timer?
     
@@ -106,5 +107,9 @@ class MainVC: NSViewController {
             imageCell.image = nil
         }
     }
-
+    
+    @IBAction func closePressed(_ sender: Any) {
+        NSApplication.shared.terminate(self)
+    }
+    
 }
