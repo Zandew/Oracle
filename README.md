@@ -1,7 +1,8 @@
 # MiniMusicWidget
 A Spotify music player and temporary playlist builder. Uses [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to search for songs and AppleScript to send commands to the Spotify App.
 
-![preview](https://github.com/Zandew/MiniMusicWidget/blob/master/preview.png) <!-- .element height="100px" width="auto" -->
+![preview](https://github.com/Zandew/MiniMusicWidget/blob/master/preview.png) 
+<!-- <img src="https://github.com/Zandew/MiniMusicWidget/blob/master/preview.png" height="24"> -->
 
 
 ## Song Recommendations
