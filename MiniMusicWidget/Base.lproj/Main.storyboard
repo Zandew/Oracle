@@ -712,7 +712,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-9g-zcE">
-                                <rect key="frame" x="184" y="8" width="28" height="22"/>
+                                <rect key="frame" x="184" y="5" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xvr-0L-S2X">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -734,7 +734,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTH-dt-Zy3">
-                                <rect key="frame" x="37" y="8" width="20" height="22"/>
+                                <rect key="frame" x="37" y="8" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSIconViewTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="CNF-09-SJJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -753,17 +753,6 @@
                                     </connections>
                                 </sliderCell>
                             </slider>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-Sq-KPg">
-                                <rect key="frame" x="111" y="9" width="28" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="magic8ball" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vvU-hj-Lyb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="magicPressed:" target="7YD-tb-kQr" id="ArR-lR-0gO"/>
-                                </connections>
-                            </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdG-rM-VcP">
                                 <rect key="frame" x="37" y="115" width="175" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -787,6 +776,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="closePressed:" target="7YD-tb-kQr" id="HAD-5n-L03"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-Sq-KPg">
+                                <rect key="frame" x="112" y="8" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="magic8ball" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vvU-hj-Lyb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="magicPressed:" target="7YD-tb-kQr" id="ArR-lR-0gO"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -95,7 +95,7 @@ class MainVC: NSViewController {
     
     @objc func update() {
         if UserData.playlist.count > 0 {
-            songName.stringValue = UserData.playlist[UserData.songIndex].name
+            songName.stringValue = "\(UserData.playlist[UserData.songIndex].name) - \(UserData.playlist[UserData.songIndex].artists[0])"
             NSAppleScript.go(code: NSAppleScript.getTime(), completionHandler: {_, output, _ in
                 let out = Double(output?.stringValue ?? "0")!
                 let tot = UserData.playlist[UserData.songIndex].length
