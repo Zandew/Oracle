@@ -10,3 +10,5 @@ User can input text about their life (how their day is going, etc..), which reve
 <img alt="ta1" src="https://github.com/Zandew/MiniMusicWidget/blob/master/toneanalyzer1.png" width=45%/><img alt="ta2" align="right" src="https://github.com/Zandew/MiniMusicWidget/blob/master/toneanalyzer2.png" width=45%/>
 
 To narrow down the number of search results returned from Spotify Web API, 1-5 music genres have to be specified by the user.
+
+![genre gif](https://github.com/Zandew/MiniMusicWidget/blob/master/genre.gif)
