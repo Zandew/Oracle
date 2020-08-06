@@ -245,10 +245,10 @@ class Query {
             let diff = params["max_\(key)"]!-params["min_\(key)"]!
             if value > 0 {
                 let val = value/pos[key]!
-                params["min_\(key)"]! += diff*val
+                params["min_\(key)"]! += diff*val/2
             } else if value < 0{
                 let val = value/neg[key]!
-                params["max_\(key)"]! -= diff*val
+                params["max_\(key)"]! -= diff*val/2
             }
         }
     }

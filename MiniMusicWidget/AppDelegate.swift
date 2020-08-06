@@ -32,7 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         loginVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainLoginVC") as? NSViewController
         
         guard let statusButton = statusBarItem.button else { return }
-        statusButton.title = "MiniMusicWidget"
+        let logo = NSImage(named: NSImage.Name("logo"))
+        logo?.size = NSSize(width: 17, height: 17)
+        statusButton.image = NSImage(named: NSImage.Name("logo"))
         statusButton.action = #selector(toggleWindow(_:))
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURL(event:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         

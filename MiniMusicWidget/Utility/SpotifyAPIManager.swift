@@ -24,16 +24,14 @@ class SpotifyAPIManager{
             accessTokenUrl: "https://accounts.spotify.com/api/token",
             responseType:   "code"
         )
-        
-        
     }
 
     func authorizeScope(){
 
         oauth2.authorize(
             withCallbackURL: URL(string: "http://localhost:8080")!,
-            scope: "user-library-modify playlist-read-collaborative playlist-read-private playlist-modify-private playlist-modify-public user-read-currently-playing user-modify-playback-state user-read-playback-state user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read  user-read-private",
-            state: "test12345") { result in
+            scope: "",
+            state: "") { result in
                 switch result {
                 case .success( (_, _, _)):
                     print("Authorization Success")
@@ -62,7 +60,7 @@ class SpotifyAPIManager{
         oauth2.postOAuthAccessTokenWithRequestToken(byCode: code!, callbackURL: URL.init(string: "http://localhost:8080")!) { result in
             
             switch result{
-                
+
             case .failure(let error):
                 print("postOAuthAccessTokenWithRequestToken Error: \(error)")
                 
