@@ -1,4 +1,4 @@
-# MiniMusicWidget
+# Oracle Music Player
 A Spotify music player and temporary playlist builder. Uses [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to search for songs and AppleScript to send commands to the Spotify App.
 
 <img alt="Preview" src="https://github.com/Zandew/MiniMusicWidget/blob/master/mainPreview.png" width=35%/>
